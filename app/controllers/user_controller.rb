@@ -2,7 +2,7 @@ class UserController < ApplicationController
 
   def index
     @users = User.all
-    @statuses = current_user.statuses.order(created_at: :desc)
+    @statuses = Status.all.order(created_at: :desc)
   end
 
   def show

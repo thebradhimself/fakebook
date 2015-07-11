@@ -27,13 +27,11 @@
 <hr />
 <h3 class="text-center">Timeline</h3>
 <div class="row">
-
   <table id="status-table">
     <% @statuses.each do |status| %>
     <tr>
-      <td> <%= status.user.username%> says: <br> <%= status.status_update %></td>
+      <td> <%= status.user.username %> says: <br> <%= status.status_update %></td>
     </tr>
     <% end %>
   </table>
-
 </div>
