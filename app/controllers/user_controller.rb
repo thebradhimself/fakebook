@@ -40,4 +40,8 @@ class UserController < ApplicationController
     redirect_to index_path
   end
 
+  def find_friends
+    @users = User.all
+  end
+
 end

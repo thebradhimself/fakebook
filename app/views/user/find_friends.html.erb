@@ -1,0 +1,9 @@
+<div class="small-3 columns text-left">
+  <table>
+    <% @users.each do |user| %>
+      <tr>
+        <td> <img src="<%= user.image_location %>" height="100" width="100" ><br><%= link_to user.name, user_path(user.username) %> <br> <i class='text-center'><%= user.username %></i> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

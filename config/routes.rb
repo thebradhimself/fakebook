@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get '/add_friend' => 'user#add_friend'
 
+  get '/find_friends' => 'user#find_friends'
+
   get '/accept_request' => 'user#accept_request'
 
   get '/deny_request' => 'user#deny_request'
