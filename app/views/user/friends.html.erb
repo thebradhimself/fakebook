@@ -1,0 +1,7 @@
+<table>
+  <% @user_friends.each do |friend| %>
+    <tr>
+      <td> <%= friend.name %> | <i><%= friend.username %></i> | </td>
+    </tr>
+  <% end %>
+</table>
