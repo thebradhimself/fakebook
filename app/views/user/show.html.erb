@@ -1,7 +1,23 @@
-<img src="<%= @user.image_location %>" alt="" />
-<%= @user.username %>
-<%= @user.name %>
-<%= @user.gender %>
-<%= @user.birthday %>
-<%= @user.city %>, <%= @user.state %>
-<%= @user.country %>
+<div class="row">
+ <div class="small-3 columns">
+   <img src="<%= @user.image_location %>" />
+ </div>
+ <div class="small-9 columns">
+   <%= @user.name %><br>
+   <i>"<%= @user.username %>"</i><br>
+   <%= @user.city %>, <%= @user.state %>, <%= @user.country %><br>
+   Born on <%= @user.birthday.strftime('%b %d, %Y') %><br>
+   <%= Time.now.year.to_i - @user.birthday.strftime('%Y').to_i%> years old<br>
+   <%= @user.gender %><br>
+ </div>
+</div>
+<hr />
+<div class="row">
+  <table>
+    <% @statuses.each do |status| %>
+    <tr>
+      <td> <%= status.user.username%> says: <br> <%= status.status_update %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
