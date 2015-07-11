@@ -2,7 +2,11 @@
   <ul class="title-area">
     <!-- Title Area -->
     <li class="name">
-      <h1><a href="/index">Fakebook </a></h1>
+      <% if current_user %>
+        <h1><a href="/index">Fakebook </a></h1>
+      <% else %>
+        <h1><a href="/">Fakebook </a></h1>
+      <% end %>
     </li>
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar"><a href="#"><span>Menu</span></a></li>
@@ -17,7 +21,7 @@
         <li class="divider"></li>
         <li>  <%= link_to 'See all friends', '/' + current_user.username + '/friends' %></li>
         <li class="divider"></li>
-        <li><a href="#">Find Friends</a>
+        <li><%= link_to 'Find Friends', find_friends_path %></a>
       <% end %>
 
         <ul class="dropdown">

@@ -1,9 +1,12 @@
-<div class="small-3 columns text-left">
-  <table>
-    <% @users.each do |user| %>
-      <tr>
-        <td> <img src="<%= user.image_location %>" height="100" width="100" ><br><%= link_to user.name, user_path(user.username) %> <br> <i class='text-center'><%= user.username %></i>  <a href="<%= add_friend_path(user.username) %>"><i class="fa fa-plus-circle"></i>Add</a> </td>
-      </tr>
-    <% end %>
-  </table>
+
+<div class='row'>
+  <% @users.each do |user| %>
+    <div class="small-3 columns">
+      <img src="<%= user.image_location %>" height="100" width="100" ><br><%= link_to user.name, user_path(user.username) %> <br> <i class='text-center'><%= user.username %></i>  <a href="<%= add_friend_path(user.username) %>"><i class="fa fa-plus-circle"></i>Add</a>
+    </div>
+  <% end %>
+</div>
+
+<div class="row text-center">
+    <p class='text-center'><%= will_paginate @users %></p>
 </div>
