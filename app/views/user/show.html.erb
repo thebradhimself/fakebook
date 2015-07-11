@@ -2,6 +2,7 @@
   <table id="status-table">
  <div class="small-3 columns">
    <img src="<%= @user.image_location %>" />
+   <%= link_to 'Add Friend', add_friend_path(@user.username) %>
  </div>
  <div class="small-9 columns">
    <%= @user.name %><br>
