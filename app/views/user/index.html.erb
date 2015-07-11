@@ -31,7 +31,7 @@
     <table id="status-table" class="">
       <% @statuses.each do |status| %>
         <tr>
-          <td><img src="<%= status.user.image_location %>"/></td><td> <%= status.user.username %> says: <br> <%= status.status_update %></td>
+          <td><img src="<%= status.user.image_location %>"/></td><td> <a href="<%= user_path(status.user.username) %>"><%= status.user.username %></a> says: <br> <%= status.status_update %></td>
         </tr>
       <% end %>
     </table>
