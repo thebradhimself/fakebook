@@ -30,6 +30,10 @@ gem 'devise'
 
 gem 'foundation-rails'
 
+gem 'faker'
+
+gem 'literate_randomizer'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
