@@ -1,2 +1,26 @@
-<h1>User#index</h1>
-<p>Find me in app/views/user/index.html.erb</p>
+<div class="row">
+  <div class="small-3 columns text-left">
+    <img src="<%= current_user.image_location %>" />
+  </div>
+  <div class="small-3 columns">
+    <%= current_user.name %><br>
+    <i>"<%= current_user.username %>"</i><br>
+    <%= current_user.city %>, <%= current_user.state %>, <%= current_user.country %><br>
+    Born on <%= current_user.birthday.strftime('%b %d, %Y') %><br>
+    <%= Time.now.year.to_i - current_user.birthday.strftime('%Y').to_i%> years old<br>
+    <%= current_user.gender %><br>
+    <%= current_user.friends.count %> <br>
+  </div>
+  <div class="small-6 columns">
+    <p>Post something</p>
+    <p>Post Something Smart</p>
+    <p>Post Something Short</p>
+    <p>Post Something Long</p>
+    <p>Post Image</p>
+    <p>Post something in latin</p>
+  </div>
+</div>
+<hr />
+<div class="row">
+  test
+</div>
