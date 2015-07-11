@@ -17,7 +17,9 @@
 <div class="row">
   <table>
     <% @statuses.each do |status| %>
+    <% @votes = status.get_upvotes.size + status.get_downvotes.size %>
     <tr>
+      <td><div class='upvote' data-status="<%= status.id %>" data-voter="<%= current_user.username %>">up</div><div id="score<%= status.id %>"> <%= @votes %></div><div class='downvote' data-status="<%= status.id %>">down</div></td>
       <td> <%= status.user.username%> says: <br> <%= status.status_update %></td>
     </tr>
     <% end %>

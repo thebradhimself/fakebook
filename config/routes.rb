@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get '/deny_request' => 'user#deny_request'
 
+  get '/voting' => 'user#votes'
+
   get ':username/friend_requests' => 'user#friend_requests'
 
   get ':username' => 'user#show', as: :user
