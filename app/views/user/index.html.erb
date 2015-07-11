@@ -13,12 +13,12 @@
     <%= link_to 'See all friends', '/' + current_user.username + '/friends' %>
   </div>
   <div class="small-6 columns">
-    <p class='post-something' data-post="<%=LiterateRandomizer.sentence %>" data-user="<%= current_user %>">Post something</p>
-    <p>Post Something Smart</p>
-    <p>Post Something Short</p>
-    <p>Post Something Long</p>
+    <p class='post-something' data-post="something" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post something</p>
+    <p class='post-something-smart' data-post="something-smart" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something Smart</p>
+    <p class='post-something-short' data-post="something-short" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something Short</p>
+    <p class='post-something-long' data-post="something-long" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something Long</p>
+    <p class='post-something-latin' data-post="something-latin" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something in Latin</p>
     <p>Post Image</p>
-    <p>Post something in latin</p>
   </div>
 </div>
 <hr />
