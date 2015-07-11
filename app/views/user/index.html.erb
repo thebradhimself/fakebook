@@ -31,6 +31,8 @@
     <table id="status-table" class="">
       <% @statuses.each do |status| %>
         <tr>
+          <% @votes = status.get_upvotes.size + status.get_downvotes.size %>
+          <td><div class='upvote' data-status="<%= status.id %>" data-voter="<%= current_user.username %>">up</div><div id="score<%= status.id %>"> <%= @votes %></div><div class='downvote' data-status="<%= status.id %>">down</div></td>
           <td><img src="<%= status.user.image_location %>"/></td><td> <a href="<%= user_path(status.user.username) %>"><%= status.user.username %></a> says: <br> <%= status.status_update %></td>
         </tr>
       <% end %>

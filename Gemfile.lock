@@ -110,6 +110,7 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.2)
+    populator (1.0.0)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -197,6 +198,7 @@ DEPENDENCIES
   literate_randomizer
   paperclip!
   pg
+  populator
   pry
   rails (= 4.2.3)
   sass-rails (~> 5.0)
