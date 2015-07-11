@@ -10,9 +10,10 @@
     <%= Time.now.year.to_i - current_user.birthday.strftime('%Y').to_i%> years old<br>
     <%= current_user.gender %><br>
     <%= current_user.friends.count %> <br>
+    <%= link_to 'See all friends', '/' + current_user.username + '/friends' %>
   </div>
   <div class="small-6 columns">
-    <p>Post something</p>
+    <p class='post-something' data-post="<%=LiterateRandomizer.sentence %>" data-user="<%= current_user %>"">Post something</p>
     <p>Post Something Smart</p>
     <p>Post Something Short</p>
     <p>Post Something Long</p>
@@ -22,7 +23,7 @@
 </div>
 <hr />
 <div class="row">
-  <table>
+  <table id="status-table">
     <% @statuses.each do |status| %>
     <tr>
       <td> <%= status.user.username%> says: <br> <%= status.status_update %></td>
