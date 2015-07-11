@@ -47,3 +47,27 @@ $(document).ready ->
         $('#status-table').prepend('<tr><td><img src="' + $('.post-something-latin').data('image') + '"/></td><td><a href="/' + $('.post-something-latin').data('username') + '">' + $('.post-something-latin').data('username') + "</a> says: <br> " + data.post + "</td></tr>")
       error: (data) ->
         console.log data
+
+  $('.upvote').click ->
+    a = $('.upvote').data('status')
+    console.log a
+    $.ajax '/voting',
+      type: 'GET'
+      data: {votes: 1, voter: $('.upvote').data('voter'), status: $('.upvote').data('status') }
+      success: (data) ->
+        console.log data
+        $('#score' + a).html(data.total_votes)
+      error: (data) ->
+        console.log data
+
+  $('.downvote').click ->
+    a = $('.downvote').data('status')
+    console.log a
+    $.ajax '/voting',
+      type: 'GET'
+      data: {votes: -1, voter: $('.downvote').data('voter'), status: $('.downvote').data('status') }
+      success: (data) ->
+        console.log data.total_votes
+        $('#score' + a).html(data.total_votes)
+      error: (data) ->
+        console.log data

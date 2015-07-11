@@ -9,7 +9,7 @@
     Born on <%= current_user.birthday.strftime('%b %d, %Y') %><br>
     <%= Time.now.year.to_i - current_user.birthday.strftime('%Y').to_i%> years old<br>
     <%= current_user.gender %><br>
-    <%= current_user.friends.count %> <br>
+    <%= current_user.friends.count %> total friends <br>
     <%= link_to 'See all friends', '/' + current_user.username + '/friends' %>
   </div>
   <div class="small-12 medium-6 large-6 columns">

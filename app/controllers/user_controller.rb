@@ -40,8 +40,26 @@ class UserController < ApplicationController
     redirect_to index_path
   end
 
+
   def find_friends
     @users = User.all
   end
 
+  def votes
+    @status = Status.find_by(id: params[:status])
+    @voter = User.find_by(username: params[:voter])
+    if params[:votes].to_i > 0
+      @status.liked_by @voter
+      upvotes = @status.get_upvotes.size.to_i
+      downvotes = @status.get_downvotes.size.to_i
+      total = upvotes - downvotes
+      render(json: {total_votes: total}, status: 200)
+    else
+      @status.downvote_from @voter
+      upvotes = @status.get_upvotes.size
+      downvotes = @status.get_downvotes.size
+      total = upvotes - downvotes
+      render(json: {total_votes: total}, status: 200)
+    end
+  end
 end

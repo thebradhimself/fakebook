@@ -12,11 +12,13 @@
     <!-- Left Nav Section -->
     <ul class="left">
       <li class="divider"></li>
-      <li><a href="#">Main Item 1</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Main Item 2</a></li>
-      <li class="divider"></li>
-      <li><a href="#">Main Item 3</a>
+      <% if current_user %>
+        <li><%= link_to 'My Profile', user_path(current_user.username) %></li>
+        <li class="divider"></li>
+        <li>  <%= link_to 'See all friends', '/' + current_user.username + '/friends' %></li>
+        <li class="divider"></li>
+        <li><a href="#">Find Friends</a>
+      <% end %>
 
         <ul class="dropdown">
           <li class="has-dropdown"><a href="#">Dropdown Level 1a</a>
@@ -57,7 +59,7 @@
     <ul class="right">
       <li class="divider hide-for-small"></li>
       <% if current_user %>
-        <li class='friend-requests'><%= link_to current_user.pending_invited_by.count, '/' + current_user.username + '/friend_requests' %> </li>
+        <li class='friend-requests'><%= link_to current_user.pending_invited_by.count, '/' + current_user.username + '/friend_requests' %></li>
       <% end %>
 
       <li class="divider"></li>
