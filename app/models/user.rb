@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
   include Amistad::FriendModel
   has_many :statuses
 
+  def add_friend
+    binding.pry
+  end
+
 end

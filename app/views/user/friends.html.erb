@@ -1,7 +1,9 @@
-<table>
-  <% @user_friends.each do |friend| %>
-    <tr>
-      <td> <%= friend.name %> | <i><%= friend.username %></i> | </td>
-    </tr>
-  <% end %>
-</table>
+<div class="small-3 columns text-left">
+  <table>
+    <% @user_friends.each do |friend| %>
+      <tr>
+        <td> <img src="<%= friend.image_location %>" height="100" width="100" ><br><%= link_to friend.name, user_path(friend.username) %> <br> <i class='text-center'><%= friend.username %></i> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   get ':username/friends' => 'user#friends'
 
+  get '/add_friend' => 'user#add_friend'
+
   get ':username' => 'user#show', as: :user
 
   get 'welcome/index'
