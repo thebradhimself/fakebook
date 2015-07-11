@@ -20,7 +20,20 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+  <%= f.hidden_field :username, :value => Faker::Internet.user_name  %>
+  <%= f.hidden_field :name, :value => Faker::Name.name  %>
+  <%= f.hidden_field :city, :value => Faker::Address.city %>
+  <%= f.hidden_field :state, :value => Faker::Address.state  %>
+  <%= f.hidden_field :country, :value => Faker::Address.country  %>
+  <%= f.hidden_field :birthday, :value => Faker::Date.between(150.years.ago, Date.today)  %>
+  <% number = rand(2) %>
+  <% if number == 0 %>
+    <% gender = 'male' %>
+  <% else %>
+    <% gender = 'female' %>
+  <% end %>
+  <%= f.hidden_field :gender, :value => gender  %>
+  <%= f.hidden_field :image_location, :value => Faker::Avatar.image  %>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
