@@ -8,7 +8,7 @@ $(document).ready ->
       data: status: {status_update: $('.post-something').data('post'), user_id: $('.post-something').data('user')}
       success: (data) ->
         console.log data
-        $('#status-table').prepend("<tr><td>" + $('.post-something').data('username') + " says: <br> " + data.post + "</td></tr>")
+        $('#status-table').prepend('<tr><td><img src="' + $('.post-something').data('image') + '"/></td><td>'+ $('.post-something').data('username') + " says: <br> " + data.post + "</td></tr>")
       error: (data) ->
         console.log data
 
@@ -17,7 +17,7 @@ $(document).ready ->
       type: 'POST'
       data: status: {status_update: $('.post-something-smart').data('post'), user_id: $('.post-something-smart').data('user')}
       success: (data) ->
-        $('#status-table').prepend("<tr><td>" + $('.post-something-smart').data('username') + " says: <br> " + data.post + "</td></tr>")
+        $('#status-table').prepend('<tr><td><img src="' + $('.post-something-smart').data('image') + '"/></td><td>' + $('.post-something-smart').data('username') + " says: <br> " + data.post + "</td></tr>")
       error: (data) ->
         console.log data
 
@@ -26,7 +26,7 @@ $(document).ready ->
       type: 'POST'
       data: status: {status_update: $('.post-something-short').data('post'), user_id: $('.post-something-short').data('user')}
       success: (data) ->
-        $('#status-table').prepend("<tr><td>" + $('.post-something-short').data('username') + " says: <br> " + data.post + "</td></tr>")
+        $('#status-table').prepend('<tr><td><img src="' + $('.post-something-short').data('image') + '"/></td><td>' + $('.post-something-short').data('username') + " says: <br> " + data.post + "</td></tr>")
       error: (data) ->
         console.log data
 
@@ -35,7 +35,7 @@ $(document).ready ->
       type: 'POST'
       data: status: {status_update: $('.post-something-long').data('post'), user_id: $('.post-something-long').data('user')}
       success: (data) ->
-        $('#status-table').prepend("<tr><td>" + $('.post-something-long').data('username') + " says: <br> " + data.post + "</td></tr>")
+        $('#status-table').prepend('<tr><td><img src="' + $('.post-something-long').data('image') + '"/></td><td>' + $('.post-something-long').data('username') + " says: <br> " + data.post + "</td></tr>")
       error: (data) ->
         console.log data
 
@@ -44,6 +44,6 @@ $(document).ready ->
       type: 'POST'
       data: status: {status_update: $('.post-something-latin').data('post'), user_id: $('.post-something-latin').data('user')}
       success: (data) ->
-        $('#status-table').prepend("<tr><td>" + $('.post-something-latin').data('username') + " says: <br> " + data.post + "</td></tr>")
+        $('#status-table').prepend('<tr><td><img src="' + $('.post-something-latin').data('image') + '"/></td><td>' + $('.post-something-latin').data('username') + " says: <br> " + data.post + "</td></tr>")
       error: (data) ->
         console.log data

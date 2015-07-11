@@ -15,11 +15,11 @@
   <div class="small-12 medium-6 large-6 columns">
     <a class="[tiny small medium large] [secondary alert success] [radius round] button split">Posts <span data-dropdown="drop"></span></a><br>
       <ul id="drop" class="f-dropdown" data-dropdown-content>
-        <li><a class='post-something' data-post="something" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something</a></li>
-        <li><a class='post-something-smart' data-post="something-smart" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something Smart</a></li>
-        <li><a class='post-something-short' data-post="something-short" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something Short</a></li>
-        <li><a class='post-something-long' data-post="something-long" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something Long</a></li>
-        <li><a class='post-something-latin' data-post="something-latin" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>">Post Something in Latin</a></li>
+        <li><a class='post-something' data-post="something" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>" data-image="<%= current_user.image_location %>">Post Something</a></li>
+        <li><a class='post-something-smart' data-post="something-smart" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>" data-image="<%= current_user.image_location %>">Post Something Smart</a></li>
+        <li><a class='post-something-short' data-post="something-short" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>" data-image="<%= current_user.image_location %>">Post Something Short</a></li>
+        <li><a class='post-something-long' data-post="something-long" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>" data-image="<%= current_user.image_location %>">Post Something Long</a></li>
+        <li><a class='post-something-latin' data-post="something-latin" data-user="<%= current_user.id %>" data-username="<%= current_user.username %>" data-image="<%= current_user.image_location %>">Post Something in Latin</a></li>
         <li><a>Post Image</a></li>
       </ul>
   </div>
@@ -27,11 +27,13 @@
 <hr />
 <h3 class="text-center">Timeline</h3>
 <div class="row">
-  <table id="status-table">
-    <% @statuses.each do |status| %>
-    <tr>
-      <td> <%= status.user.username %> says: <br> <%= status.status_update %></td>
-    </tr>
-    <% end %>
-  </table>
+  <div class="scrollable">
+    <table id="status-table" class="">
+      <% @statuses.each do |status| %>
+        <tr>
+          <td><img src="<%= status.user.image_location %>"/></td><td> <%= status.user.username %> says: <br> <%= status.status_update %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
