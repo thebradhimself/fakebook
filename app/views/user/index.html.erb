@@ -22,5 +22,12 @@
 </div>
 <hr />
 <div class="row">
-  test
+  <table>
+    <% @statuses.each do |status| %>
+    <tr>
+      <td> <%= status.user.username%> says: <br> <%= status.status_update %></td>
+    </tr>
+    <% end %>
+  </table>
+
 </div>

@@ -1,6 +1,7 @@
 class UserController < ApplicationController
   def index
     @users = User.all
+    @statuses = current_user.statuses
   end
 
   def show
