@@ -8,6 +8,12 @@ Rails.application.routes.draw do
 
   get '/add_friend' => 'user#add_friend'
 
+  get '/accept_request' => 'user#accept_request'
+
+  get '/deny_request' => 'user#deny_request'
+
+  get ':username/friend_requests' => 'user#friend_requests'
+
   get ':username' => 'user#show', as: :user
 
   get 'welcome/index'

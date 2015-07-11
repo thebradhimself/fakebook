@@ -21,4 +21,23 @@ class UserController < ApplicationController
     redirect_to user_path(@user.username)
   end
 
+  def friend_requests
+    @user = User.find_by(username: params[:username])
+    @requests = @user.pending_invited_by
+  end
+
+  def accept_request
+    @user = User.find_by(username: params[:username])
+    @friend = User.find_by(username: params[:friend_name])
+    @user.approve @friend
+    redirect_to index_path
+  end
+
+  def deny_request
+    @user = User.find_by(username: params[:username])
+    @friend = User.find_by(username: params[:friend_name])
+    @user.block @friend
+    redirect_to index_path
+  end
+
 end

@@ -1,0 +1,9 @@
+<table>
+<% @requests.each do |request| %>
+  <tr><td> <img src="<%= request.image_location %>" height="100" width="100" ><br><%= link_to request.name, user_path(request.username) %> <br> <i class='text-center'><%= request.username %></i>
+  <br> <%= link_to 'Accept', accept_request_path({username: current_user.username, friend_name: request.username}), class: 'button tiny success' %> | <%= link_to 'Deny', deny_request_path({username: current_user.username, friend_name: request.username}), class: 'button tiny alert' %>
+
+   </td>
+  </tr>
+<% end %>
+</table>
